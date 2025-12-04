@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48f8d6a196fbec46b2acb7eb6efb532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cuttingCounter: {fileID: 631838997015945919}
+  cuttingCounter: {fileID: 6374708765435409373}
 --- !u!4 &3339975347601636055 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4589716710238282923, guid: d72bee846803d074784ffb8f64e993ca,
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1953bcb6928dac46b99cd45193cb607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCounter: {fileID: 631838997015945919}
+  baseCounter: {fileID: 6374708765435409373}
   visualGameObjectArray:
   - {fileID: 6705788902160260767}
   - {fileID: 7341021824460143222}
@@ -344,7 +344,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7553042381045960357, guid: 8e7ade6f13ad736488c88617ce2a25f6,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 631838997015945919}
+      addedObject: {fileID: 6374708765435409373}
   m_SourcePrefab: {fileID: 100100000, guid: 8e7ade6f13ad736488c88617ce2a25f6, type: 3}
 --- !u!4 &421238877641189488 stripped
 Transform:
@@ -364,7 +364,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5402092992043518408}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &631838997015945919
+--- !u!114 &6374708765435409373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -489,11 +489,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6697355047251253424, guid: aab6855173783874b920cd3e230484ae,
-        type: 3}
-      propertyPath: cuttingCounter
-      value: 
-      objectReference: {fileID: 631838997015945919}
     - target: {fileID: 6697355047251253424, guid: aab6855173783874b920cd3e230484ae,
         type: 3}
       propertyPath: hasProgressGameObject
