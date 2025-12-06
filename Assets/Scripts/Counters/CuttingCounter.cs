@@ -7,6 +7,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
 {
     public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
 
+    public static event EventHandler OnAnyCut;
     public event EventHandler OnCut;
 
 
@@ -58,6 +59,11 @@ public class CuttingCounter : BaseCounter, IHasProgress
             {
                 //Player not carrying anything
                 GetKitchenObject().SetKitchenObjectParent(player);
+
+                OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
+                {
+                    progressNormalized = 0f
+                });
             }
         }
     }
@@ -70,6 +76,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
             cuttingProgress++;
 
             OnCut?.Invoke(this, EventArgs.Empty);
+            OnAnyCut?.Invoke(this, EventArgs.Empty);
 
             CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
 
