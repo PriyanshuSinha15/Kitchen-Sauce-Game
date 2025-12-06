@@ -17,6 +17,7 @@ public class DeliveryManager : MonoBehaviour
     private float spawnRecipeTimer;
     private float spawnRecipeTimerMax = 4;
     private int waitingRecipesMax = 4;
+    [SerializeField] private int successfulRecipesAmount;
 
     private void Awake()
     {
@@ -76,7 +77,7 @@ public class DeliveryManager : MonoBehaviour
                 if(platesContentMatchesRecipe)
                 {
                     //Player delivered the correct recipe!
-                    Debug.Log("Player delivered the correct recipe!");
+                    successfulRecipesAmount++;
                     waitingRecipeSOList.RemoveAt(i);
 
                     OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
@@ -88,12 +89,16 @@ public class DeliveryManager : MonoBehaviour
 
         //No matches found!
         //Player did not deliver the correct recipe
-        Debug.Log("Player did not deliver the correct recipe");
         OnRecipeFailed?.Invoke(this, EventArgs.Empty);  
     }
 
     public List<RecipeSO> GetWaitingRecipeSOList()
     {
         return waitingRecipeSOList;
+    }
+
+    public int GetSuccessfulRecipesAmount()
+    {
+        return successfulRecipesAmount; 
     }
 }
