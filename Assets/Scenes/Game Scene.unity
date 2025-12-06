@@ -3523,7 +3523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 18.099976, y: -24}
+  m_AnchoredPosition: {x: 18.100098, y: -24}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1338071980
@@ -3707,6 +3707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1382822691}
   - component: {fileID: 1382822692}
+  - component: {fileID: 1382822693}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3749,6 +3750,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   kitchenObjectHoldPoint: {fileID: 1407939172}
+--- !u!114 &1382822693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382822690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9f85e24b362614eb30faad461275ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1407939171
 GameObject:
   m_ObjectHideFlags: 0
