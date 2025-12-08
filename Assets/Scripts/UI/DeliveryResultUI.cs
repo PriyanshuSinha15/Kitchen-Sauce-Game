@@ -20,9 +20,9 @@ public class DeliveryResultUI : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
 
-        gameObject.SetActive(false);
+        Hide();
     }
 
     private void Start()
@@ -34,24 +34,59 @@ public class DeliveryResultUI : MonoBehaviour
     private void DeliveryManager_OnRecipeFailed(object sender, System.EventArgs e)
     {
         Debug.Log("Chalu ho na re");
-        gameObject.SetActive(true);
-        animator.SetTrigger(POPUP);
-
-        backgroundImage.color = failedColor;
-        iconImage.sprite = failedSprite;
-        messageText.text = "DELIVERY\nFAILED";
-
+        Show();
+        DeliveryFail();
     }
 
     private void DeliveryManager_OnRecipeSuccess(object sender, System.EventArgs e)
     {
         Debug.Log("Chalu ho na re");
-        gameObject.SetActive(true);
+        Show();
+        DeliverySuccess();
+
+    }
+
+    private void Show()
+    {
+        gameObject.SetActive(true); 
+    }
+
+    private void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+
+    // Temporary Fix to First UI for Delivery Result
+    public void UpdateUIAccordingToDeliveryResult(bool isFirstTime, bool deliveryResult)
+    {
+        if(isFirstTime)
+        {
+            if(deliveryResult)
+            {
+                DeliverySuccess();
+            }
+            else
+            {
+                DeliveryFail();
+            }
+        }
+    }
+
+    private void DeliverySuccess()
+    {
         animator.SetTrigger(POPUP);
 
         backgroundImage.color = successColor;
         iconImage.sprite = successSprite;
-        messageText.text = "DELIVERY\nFAILED";
+        messageText.text = "DELIVERY\nSUCCESS";
+    }
 
+    private void DeliveryFail()
+    {
+        animator.SetTrigger(POPUP);
+
+        backgroundImage.color = failedColor;
+        iconImage.sprite = failedSprite;
+        messageText.text = "DELIVERY\nFAILED";
     }
 }

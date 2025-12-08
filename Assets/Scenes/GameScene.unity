@@ -500,6 +500,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31026941}
   m_CullTransparentMesh: 1
+--- !u!224 &49057280 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6147550058333168722, guid: 91737b67b23377a498603f9cae13549b,
+    type: 3}
+  m_PrefabInstance: {fileID: 641791211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &49057287 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7164410112602795410, guid: 91737b67b23377a498603f9cae13549b,
+    type: 3}
+  m_PrefabInstance: {fileID: 641791211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0cbc2f9507fb3479b8c8f0b08d1779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &60563254
 GameObject:
   m_ObjectHideFlags: 0
@@ -11230,6 +11248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container: {fileID: 1041597331}
   recipeTemplate: {fileID: 1148525196}
+  deliveryResultUITransform: {fileID: 49057280}
+  deliveryResultUI: {fileID: 49057287}
 --- !u!1 &1433049512
 GameObject:
   m_ObjectHideFlags: 0
