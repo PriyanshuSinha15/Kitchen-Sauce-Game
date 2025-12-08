@@ -5,8 +5,18 @@ using TMPro;
 
 public class GameStartCountdownUI : MonoBehaviour
 {
+    private const string NUMBER_POPUP = "NumberPopup";
+
+    private Animator animator;
+
     [SerializeField] private TMP_Text countdownText;
 
+    private int previousCountDownTimer;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();    
+    }
     private void Start()
     {
         KitchenGameManager.Instance.OnStateChanged += KitchenGameManager_OnStateChanged;
@@ -28,7 +38,15 @@ public class GameStartCountdownUI : MonoBehaviour
 
     private void Update()
     {
-        countdownText.text = Mathf.Ceil(KitchenGameManager.Instance.GetCountdownToStartTimer()).ToString();
+        int countdownTimer = Mathf.CeilToInt(KitchenGameManager.Instance.GetCountdownToStartTimer());
+        countdownText.text = countdownTimer.ToString();
+
+        if(previousCountDownTimer != countdownTimer)
+        {
+            previousCountDownTimer = countdownTimer;
+            animator.SetTrigger(NUMBER_POPUP);
+            SoundManager.Instance.PlayCountdownSound();
+        }
     }
 
     private void Show()
