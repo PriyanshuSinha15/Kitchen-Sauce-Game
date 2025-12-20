@@ -21,26 +21,24 @@ public class DeliveryResultUI : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-
-        Hide();
     }
 
     private void Start()
     {
         DeliveryManager.Instance.OnRecipeSuccess += DeliveryManager_OnRecipeSuccess;
         DeliveryManager.Instance.OnRecipeFailed += DeliveryManager_OnRecipeFailed;
+
+        Hide();
     }
 
     private void DeliveryManager_OnRecipeFailed(object sender, System.EventArgs e)
     {
-        Debug.Log("Chalu ho na re");
         Show();
         DeliveryFail();
     }
 
     private void DeliveryManager_OnRecipeSuccess(object sender, System.EventArgs e)
     {
-        Debug.Log("Chalu ho na re");
         Show();
         DeliverySuccess();
 
@@ -54,22 +52,6 @@ public class DeliveryResultUI : MonoBehaviour
     private void Hide()
     {
         gameObject.SetActive(false);
-    }
-
-    // Temporary Fix to First UI for Delivery Result
-    public void UpdateUIAccordingToDeliveryResult(bool isFirstTime, bool deliveryResult)
-    {
-        if(isFirstTime)
-        {
-            if(deliveryResult)
-            {
-                DeliverySuccess();
-            }
-            else
-            {
-                DeliveryFail();
-            }
-        }
     }
 
     private void DeliverySuccess()
